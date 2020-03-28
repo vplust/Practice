@@ -72,11 +72,51 @@ public class Sorting {
 
 	}
 
+	
+	private static void heapSort(int arr[]){
+		//Create heap
+		for(int node = arr.length-1;node>=0;--node){
+			heapify(arr,node,arr.length);
+		}
+		//sort heap
+		for(int i = arr.length-1;i>=0;--i){
+			int temp = arr[0];
+			arr[0] = arr[i];
+			arr[i]=temp;
+			
+			heapify(arr, 0, i);
+			
+		}
+		
+	}
+	private static void heapify(int[] arr, int node, int sizeForSort) {
+		// TODO Auto-generated method stub
+		//Set node to highest
+		int highest = node;
+		//Compare highest with left child
+		int left = 2*node+1;
+		highest = left < sizeForSort && arr[highest]<arr[left] ? left : highest;
+		//Compare highest with right child
+		int right = 2*node +2;
+		highest = right < sizeForSort && arr[highest]<arr[right] ? right : highest;
+		//swap node with highest node and heapify the swapped child
+		if(highest != node){
+			int temp = arr[node];
+			arr[node] = arr[highest];
+			arr[highest] = temp;
+			
+			heapify(arr,highest, sizeForSort);
+		}
+		
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] arr = Arrays.copyOfRange(new int[] { 10, 4, -3, 1 ,6}, 0, 5);
 		// mergeSort(arr, 0, arr.length-1);
-		quickSort(arr, 0, arr.length - 1);
+		//quickSort(arr, 0, arr.length - 1);
+		heapSort(arr);
+		
 		for (int i : arr) {
 			System.out.println(i);
 		}
