@@ -2,7 +2,7 @@ package practice.algorithms.searching;
 
 public class ContainsSubString {
 
-	private boolean containsSubString(char[] source, char[] test,int indexSource, int indexTest){
+	private static boolean containsSubString(char[] source, char[] test,int indexSource, int indexTest){
 		if(indexSource==source.length)
 			return false;
 		else if(indexTest==test.length)
@@ -15,7 +15,7 @@ public class ContainsSubString {
 		return false;
 	}
 	public static void main(String[] args) {
-		System.out.println(new ContainsSubString().containsSubString("testtest123".toCharArray(), "t12".toCharArray(), 0, 0));;
+		System.out.println(containsSubString("testtest123".toCharArray(), "t12".toCharArray(), 0, 0));;
 		
 		
 		

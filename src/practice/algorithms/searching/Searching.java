@@ -1,6 +1,6 @@
 package practice.algorithms.searching;
 
-public class BinarySearch {
+public class Searching {
 
 	static int binarySearch(int[] arr, int l, int r, int x) {
 		if (r >= l) {
