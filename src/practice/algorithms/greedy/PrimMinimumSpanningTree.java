@@ -46,7 +46,7 @@ public class PrimMinimumSpanningTree {
 		}
 	}
 
-	private static int minWeightNode(int mstResult[][], boolean[] visited) {
+	public static int minWeightNode(int mstResult[][], boolean[] visited) {
 		int min = Integer.MAX_VALUE;
 		int index = -1;
 		for(int mstNode[] : mstResult)
